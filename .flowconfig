@@ -1,0 +1,12 @@
+[ignore]
+.*/build
+.*/config
+.*/node_modules
+
+[include]
+[ignore]
+.*/build
+.*/config
+.*/node_modules
+
+[include]

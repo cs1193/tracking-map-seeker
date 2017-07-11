@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.styles.css[0] %>">
+    <script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
+  </head>
+  <body ng-app="example">
+    <example>
+      <ng-view></ng-view>
+    </example>
+    <script type="text/javascript">
+    </script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.scripts.entry %>"></script>
+  </body>
+</html>
