@@ -87,6 +87,11 @@ const configuration = {
       use: [{
         loader: 'json-loader'
       }]
+    }, {
+      test: /\.(glsl|vs|fs|frag|vert)$/,
+      use: [{
+        loader: 'webpack-glsl-loader'
+      }]
     }]
   },
   output: {

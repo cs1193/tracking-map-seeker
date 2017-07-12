@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "webpack-glsl-loader": "1.0.1"
   }
 }

@@ -7,10 +7,27 @@
     <script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
   </head>
   <body ng-app="example">
-    <example>
-      <ng-view></ng-view>
-    </example>
+    <div id="map"></div>
     <script type="text/javascript">
+    </script>
+    <script id="pointVertexShader" type="x-shader/x-vertex">
+      attribute vec4 worldCoord;
+      uniform mat4 mapMatrix;
+      void main() {
+        // transform world coordinate by matrix uniform variable
+        gl_Position = mapMatrix * worldCoord;
+        // a constant size for points, regardless of zoom level
+        gl_PointSize = 10.;
+      }
+    </script>
+    <script id="pointFragmentShader" type="x-shader/x-fragment">
+      precision mediump float;
+      void main() {
+        // set pixels in points to something that stands out
+        gl_FragColor = vec4(.9, .3, .1, 1.);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?region=IN&key=AIzaSyCoAMbFe634ISElCOwaNsqjWh5Cxuz5x_c">
     </script>
     <script src="<%= htmlWebpackPlugin.files.chunks.scripts.entry %>"></script>
   </body>
